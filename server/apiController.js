@@ -29,7 +29,7 @@ apiController.makeInterestRequests = (req, expRes, next) => {
 	console.log('Prev middleware data', expRes.locals.userInfo);
 	// console.log('Prev middleware data', expRes.locals);
 	// let apiArr = expRes.locals.userInfo.interests;
-	let apiArr = [0, 2];
+	let apiArr = [1];
 	let apiResults = [];
 
 	for (let i = 0; i < apiArr.length; i += 1) {

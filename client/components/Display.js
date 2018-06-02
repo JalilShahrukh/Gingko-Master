@@ -4,8 +4,8 @@ const Display = (props) => {
   return (
   <div id="apiDisplay">
   	<h1>New Display</h1>
-    <p>{props.name}</p>
-    <p>{props.weight}</p>
+    <p>{props.info.name}</p>
+    <p>{props.info.weight}</p>
     {/* <img className="images" src={props.img}></img> */}
   </div>
   );   
