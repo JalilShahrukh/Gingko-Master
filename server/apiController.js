@@ -25,11 +25,10 @@ apiController.makeInterestRequests = (req, expRes, next) => {
 	// Going to add onto the res.userInfo object that will eventually be sent to the user
 	// Interests to loop through should be in expRes.locals.userInfo.interests
 	console.log('In api make many req');
-	// let dataToSend = Object.assign({}, expRes.locals.userInfo);
 	console.log('Prev middleware data', expRes.locals.userInfo);
-	// console.log('Prev middleware data', expRes.locals);
-	// let apiArr = expRes.locals.userInfo.interests;
-	let apiArr = [1];
+
+	let apiArr = expRes.locals.userInfo.interests;
+	// let apiArr = [0];
 	let apiResults = [];
 
 	for (let i = 0; i < apiArr.length; i += 1) {
@@ -51,9 +50,6 @@ apiController.makeInterestRequests = (req, expRes, next) => {
 
 	Promise.all(apiResults).then((results) => {
 	    console.log('Got all updates back');
-	    // dataToSend['apiResults'] = results;
-	    // dataToSend.test = 'newfieldADasdlbas';
-	    // expRes.locals.userInfo.apple = 'sauce';
 	    // Brute force copy object
 	    let dataToSend = {};
 	    dataToSend.interests = expRes.locals.userInfo.interests.slice(0);

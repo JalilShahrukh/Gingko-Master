@@ -28,7 +28,7 @@ function loginAuth(usernameText, passwordText, callback) {
   };
 
   loginRequest.onerror = function() {
-    console.log('Connection Error')
+    console.log('Connection Error');
   };
 
   loginRequest.send(JSON.stringify({ username: usernameText, password: passwordText}));
